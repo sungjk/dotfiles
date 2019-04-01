@@ -1,0 +1,19 @@
+# CLI Shortcuts
+alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
+
+# Reload zsh
+alias rr="source $HOME/.zshrc"
+
+# List current directory
+alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -ahlF --color --group-directories-first"
+
+# Java Version Switcher
+alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`; java -version"
+alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
+alias jsh="j11 && sleep 1 && cd $HOME/libs && mvn jshell:run"
+
+# Docker
+alias dc="docker-compose"
+
+# Kubenertes
+alias kb="kubectl"
