@@ -52,7 +52,6 @@ brew 'woff2'
 cask 'font-source-code-pro'
 
 # Dev
-cask 'java'
 cask 'java8'
 brew 'gradle'
 brew 'maven'

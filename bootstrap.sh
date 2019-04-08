@@ -57,10 +57,6 @@ git clone https://github.com/jhipster/jhipster-oh-my-zsh-plugin.git $HOME/.oh-my
 # Install global NPM packages
 npm install --global yarn
 
-# Create a Sites directory
-# This is a default directory for macOS user accounts but doesn't comes pre-installed
-mkdir $HOME/Sites
-
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
 ln -nfs $DOTFILES/.zshrc $HOME/.zshrc
