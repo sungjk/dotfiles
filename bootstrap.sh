@@ -54,9 +54,6 @@ rm -rf fonts
 
 git clone https://github.com/jhipster/jhipster-oh-my-zsh-plugin.git $HOME/.oh-my-zsh/custom/plugins/jhipster
 
-# Install global NPM packages
-npm install --global yarn
-
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
 ln -nfs $DOTFILES/.zshrc $HOME/.zshrc

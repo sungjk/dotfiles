@@ -74,7 +74,7 @@ brew 'kubernetes-cli'
 brew 'apache-spark'
 
 brew 'nvm'
-brew 'node'
+brew 'node@10', args: ['with-npm']
 brew 'yarn'
 
 brew 'mongodb', restart_service: true
