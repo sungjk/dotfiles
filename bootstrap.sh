@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+git pull origin master;
+
 echo "Setting up your Mac..."
 
 mkdir -p $HOME/workspace
@@ -32,8 +34,8 @@ if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
 fi;
 
 # Remove outdated versions from the cellar.
-brew cleanup
-brew cask cleanup
+# brew cleanup
+# brew cask cleanup
 
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
@@ -42,8 +44,7 @@ chsh -s $(which zsh)
 #-------------------------------------------------------------------------------
 # Install Oh-my-zsh
 #-------------------------------------------------------------------------------
-
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Install Powerline theme
 # Neet to set font in iterm2 preferences

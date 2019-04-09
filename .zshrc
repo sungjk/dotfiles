@@ -10,14 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-export POWERLINE_RIGHT_B="none"
-export POWERLINE_HIDE_USER_NAME="true"
-export POWERLINE_HIDE_HOST_NAME="true"
-export POWERLINE_DISABLE_RPROMPT="true"
-POWERLINE_PATH="short"
-POWERLINE_DETECT_SSH="true"
-
-ZSH_THEME="powerline"
+ZSH_THEME="agnoster"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -82,3 +75,5 @@ for file in "${files[@]}"; do
 done;
 
 unset files file;
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
