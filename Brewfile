@@ -39,8 +39,6 @@ brew 'screen'
 brew 'php'
 
 # Install font tools.
-brew 'sfnt2woff'
-brew 'sfnt2woff-zopfli'
 brew 'woff2'
 cask 'font-source-code-pro'
 
