@@ -13,12 +13,9 @@ export ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+## POWERLEVEL9K
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MODE="awesome-patched"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -62,9 +59,13 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras npm docker docker-compose jhipster)
+plugins=(zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting git npm docker docker-compose jhipster)
 
-source $ZSH/oh-my-zsh.sh
+source $ZSH/
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-completions/zsh-completions.zsh
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -76,5 +77,3 @@ for file in "${files[@]}"; do
 done;
 
 unset files file;
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
