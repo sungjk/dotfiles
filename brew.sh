@@ -76,9 +76,5 @@ brew install mysql
 brew install sqlite
 
 brew install zsh
-brew install zsh-autosuggestions
-brew install zsh-completions
-brew install zsh-history-substring-search
-brew install zsh-syntax-highlighting
 
 brew cleanup
