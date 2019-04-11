@@ -13,47 +13,16 @@ if test ! $(which brew); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Make sure we’re using the latest Homebrew.
-brew update
-
-# Upgrade any already-installed formulae.
-brew upgrade
-
-# Save Homebrew’s installed location.
-BREW_PREFIX=$(brew --prefix)
-
-# Install all our dependencies with bundle (See Brewfile)
-brew tap homebrew/bundle
-brew bundle --file=$DOTFILES/Brewfile
-ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
-
-# Switch to using brew-installed bash as default shell
-if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
-  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
-  chsh -s "${BREW_PREFIX}/bin/bash";
-fi;
-
-# Remove outdated versions from the cellar.
-# brew cleanup
-# brew cask cleanup
-
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
-
-#-------------------------------------------------------------------------------
 # Install Oh-my-zsh
-#-------------------------------------------------------------------------------
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-# Install Powerline theme
-# Neet to set font in iterm2 preferences
-wget https://raw.githubusercontent.com/jeremyFreeAgent/oh-my-zsh-powerline-theme/master/powerline.zsh-theme -O $HOME/.oh-my-zsh/themes/powerline.zsh-theme
-git clone git@github.com:powerline/fonts.git && bash fonts/install.sh
-sleep 3
-rm -rf fonts
-
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 git clone https://github.com/jhipster/jhipster-oh-my-zsh-plugin.git $HOME/.oh-my-zsh/custom/plugins/jhipster
+
+git clone https://github.com/powerline/fonts.git --depth=1
+cp -r $DOTFILES/.fonts/ $HOME/Library/Fonts
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
