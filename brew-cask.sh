@@ -15,7 +15,6 @@ brew cask install atom
 brew cask install docker
 brew cask install dropbox
 brew cask install google-chrome
-brew cask install intellij-idea
 brew cask install iterm2
 brew cask install postman
 brew cask install slack
