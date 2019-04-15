@@ -4,7 +4,7 @@
 [core]
     name = sungjk
     email = ajax0615@gmail.com
-	excludesfile = /Users/jeremy/dotfiles/.gitignore_global
+	excludesfile = /Users/Jeremy/dotfiles/.gitignore_global
     precomposeunicode = true
     quotepath = false
 [alias]
