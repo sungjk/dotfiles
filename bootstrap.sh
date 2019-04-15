@@ -33,7 +33,7 @@ git clone git@github.com:powerline/fonts.git && bash fonts/install.sh
 sleep 3
 rm -rf fonts
 
-cp -r $DOTFILES/.fonts/ $HOME/Library/Fonts
+cp -r $DOTFILES/.fonts/ /Library/Fonts
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
