@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias g="git"
+alias wg="cd ~/workspace/gelato/"
+alias cs="cd ~/.ssh/gelato"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -45,9 +47,9 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # Java Version Switcher
-alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`; java -version"
+# alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`; java -version"
 alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
-alias jsh="j11 && sleep 1 && cd $HOME/libs && mvn jshell:run"
+# alias jsh="j11 && sleep 1 && cd $HOME/libs && mvn jshell:run"
 
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
