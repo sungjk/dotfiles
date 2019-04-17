@@ -81,7 +81,7 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+defaults write com.apple.screencapture location ~/Desktop
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
@@ -254,5 +254,13 @@ defaults write com.apple.ical "first minute of work hours" 540
 # Auto-play videos when opened with QuickTime Player
 defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
 
+
+###############################################################################
+# Spotlight			                                                              #
+###############################################################################
+# https://www.technobezz.com/how-to-fix-spotlight-forever-indexing-issue-on-mac-os-x/
+# sudo rm -R /.Spotlight-V100
+# sudo mdutil -i on /
+# sudo mdutil -E /
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
