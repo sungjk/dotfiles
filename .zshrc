@@ -59,6 +59,9 @@ plugins=(zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-sy
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
+# autocompletion for awscli
+source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.

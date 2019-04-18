@@ -81,4 +81,6 @@ brew install zsh-completions
 brew install zsh-history-substring-search
 brew install zsh-syntax-highlighting
 
+brew install awscli
+
 brew cleanup
