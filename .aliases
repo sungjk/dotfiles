@@ -6,9 +6,9 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias g="git"
-alias wg="cd ~/workspace/gelato/"
+alias cg="cd ~/workspace/gelato/"
 alias cs="cd ~/.ssh/gelato"
-alias lsec2="aws ec2 describe-instances --query \"Reservations[].Instances[].[Tags[?Key=='Name']|[0].Value, InstanceId, InstanceType, KeyName, PublicDnsName, PublicIpAddress]\" --output table"
+alias lsec2="aws ec2 describe-instances --query \"Reservations[].Instances[].[Tags[?Key=='Name']|[0].Value, KeyName, PublicIpAddress, PublicDnsName, InstanceId, InstanceType]\" --output table"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

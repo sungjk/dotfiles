@@ -21,3 +21,7 @@ brew cask install slack
 brew cask install sourcetree
 brew cask install wireshark
 brew cask install tunnelblick
+
+brew search visual-studio-code
+brew cask info visual-studio-code
+brew cask install visual-studio-code
