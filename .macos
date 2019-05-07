@@ -15,6 +15,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
+# Set desktop background image
+osascript -e 'tell application "System Events" to tell every desktop to set picture to "~/dotfiles/jeremy_background.jpg"'
+
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
 
