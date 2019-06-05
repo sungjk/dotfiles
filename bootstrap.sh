@@ -57,7 +57,8 @@ source $DOTFILES/.macos
 # Symlink the Mackup config file to the home directory
 rm -rf $HOME/.mackup.cfg
 ln -nfs $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
-
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
 
 #-------------------------------------------------------------------------------
 # awscli

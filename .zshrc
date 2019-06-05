@@ -72,3 +72,5 @@ for file in "${files[@]}"; do
 done;
 
 unset files file;
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
