@@ -2,25 +2,27 @@
 	name = sungjk
 	email = ajax0615@gmail.com
 [core]
-    name = sungjk
-    email = ajax0615@gmail.com
+	name = sungjk
+	email = ajax0615@gmail.com
 	excludesfile = /Users/Jeremy/dotfiles/.gitignore_global
-    precomposeunicode = true
-    quotepath = false
+	precomposeunicode = true
+	quotepath = false
 [alias]
-    c = commit -am
-    co = checkout
-    s = status
-    undocommit = reset HEAD~
-    hreset = reset --hard
-    df = diff --color --color-words --abbrev
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	c = commit -am
+	co = checkout
+	s = status -s
+	a = "!git add $(git status -s | fzf -m | awk '{print $2}')"
+	undocommit = reset HEAD~
+	hreset = reset --hard
+	df = diff --color --color-words --abbrev
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	ch = "!git checkout $(git branch -vv | fzf | awk '{print $1}')"
 
 [color]
-    branch = auto
-    diff = auto
-    status = auto
-    ui = true
+	branch = auto
+	diff = auto
+	status = auto
+	ui = true
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -37,8 +39,8 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
-    newMoved = cyan
-    oldMoved = blue
+	newMoved = cyan
+	oldMoved = blue
 [color "status"]
 	added = yellow
 	changed = green
