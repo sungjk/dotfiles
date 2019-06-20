@@ -83,5 +83,7 @@ brew install zsh-syntax-highlighting
 brew install fzf
 
 brew install awscli
+brew install jq
+brew install asciinema
 
 brew cleanup
