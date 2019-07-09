@@ -10,7 +10,7 @@ alias lsec2="aws ec2 describe-instances --query \"Reservations[].Instances[].[Ta
 alias lsrds="aws rds describe-db-instances --query 'DBInstances[*].[DBInstanceIdentifier, Engine, DBInstanceStatus, Endpoint.Address, Endpoint.Port, DBName, MasterUsername] | sort_by(@, &[0])'"
 alias openvs="open -a \"Visual Studio Code\""
 alias note="open -a \"atom\" ~/workspace/notes.md"
-alias todo="open -a \"atom\" ~/workspace/todo.md"
+alias todo="open -a \"atom\" ~/workspace/github/sungjk/wiki/todos.md"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

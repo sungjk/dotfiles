@@ -16,7 +16,7 @@
 	hreset = reset --hard
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-	ch = "!git checkout $(git branch -vv | fzf | awk '{print $1}')"
+	ch = "!git checkout $(git  --no-pager branch -vv | fzf +m | awk '{print $1}')"
 
 [color]
 	branch = auto
