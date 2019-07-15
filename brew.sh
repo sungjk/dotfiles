@@ -57,6 +57,7 @@ brew install kotlin
 brew install sbt
 brew install scala
 brew install python3
+brew install pyenv
 brew install pyenv-virtualenv
 brew install ruby
 brew install rbenv
@@ -81,6 +82,7 @@ brew install zsh-completions
 brew install zsh-history-substring-search
 brew install zsh-syntax-highlighting
 brew install fzf
+brew install noti
 
 brew install awscli
 brew install jq
