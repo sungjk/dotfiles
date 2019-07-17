@@ -9,7 +9,6 @@
 	quotepath = false
 [alias]
 	c = commit -am
-	co = checkout
 	s = status -s
 	a = "!git add $(git status -s | fzf -m | awk '{print $2}')"
 	undocommit = reset HEAD~
@@ -17,6 +16,7 @@
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	ch = "!git checkout $(git  --no-pager branch -vv | fzf +m | awk '{print $1}')"
+	co = "!git checkout -- $(git status -s | fzf -m | awk '{print $2}')"
 
 [color]
 	branch = auto
