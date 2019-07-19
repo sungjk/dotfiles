@@ -3,3 +3,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Export JAVA_HOME
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+# Setting a default python binary
+# https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv
+export AUTOSWITCH_DEFAULT_PYTHON="/usr/local/bin/python3.7"

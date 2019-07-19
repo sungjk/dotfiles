@@ -11,6 +11,7 @@ alias lsrds="aws rds describe-db-instances --query 'DBInstances[*].[DBInstanceId
 alias openvs="open -a \"Visual Studio Code\""
 alias note="open -a \"atom\" ~/workspace/notes.md"
 alias todo="open -a \"atom\" ~/workspace/github/sungjk/wiki/todos.md"
+alias jpnb="jupyter notebook"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -67,3 +68,11 @@ alias dc="docker-compose"
 
 # Kubenertes
 alias kb="kubectl"
+
+# URL encoding and decoding
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
+alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
+
+function mcd() {
+	mkdir $1 && cd $1
+}

@@ -16,6 +16,7 @@ fi
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
+
 #-------------------------------------------------------------------------------
 # Install zsh
 #-------------------------------------------------------------------------------
@@ -26,7 +27,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH/custom/plugins/z
 git clone https://github.com/zsh-users/zsh-completions $ZSH/custom/plugins/zsh-completions
 git clone https://github.com/zsh-users/zsh-history-substring-search $ZSH/custom/plugins/zsh-history-substring-search
 git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH/custom/plugins/zsh-syntax-highlighting
-git clone https://github.com/jhipster/jhipster-oh-my-zsh-plugin.git $ZSH/.oh-my-zsh/custom/plugins/jhipster
+git clone https://github.com/jhipster/jhipster-oh-my-zsh-plugin.git $ZSH/custom/plugins/jhipster
+git clone https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git $ZSH/custom/plugins/autoswitch_virtualenv
 
 wget https://raw.githubusercontent.com/jeremyFreeAgent/oh-my-zsh-powerline-theme/master/powerline.zsh-theme -O $ZSH/themes/powerline.zsh-theme
 git clone git@github.com:powerline/fonts.git && bash fonts/install.sh
@@ -59,6 +61,7 @@ rm -rf $HOME/.mackup.cfg
 ln -nfs $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
+
 
 #-------------------------------------------------------------------------------
 # awscli
