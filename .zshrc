@@ -61,9 +61,6 @@ source $ZSH/oh-my-zsh.sh
 # autocompletion for awscli
 source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
 
-# virtualenv auto-activate and autorun scripts in directories
-source $DOTFILES/scripts/virtualenv-auto-activate.sh
-
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
