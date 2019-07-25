@@ -8,7 +8,7 @@
 	precomposeunicode = true
 	quotepath = false
 [alias]
-	c = commit -am
+	c = commit -m
 	s = status -s
 	a = "!git add $(git status -s | fzf -m | awk '{print $2}')"
 	undocommit = reset HEAD~
