@@ -17,6 +17,13 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	ch = "!git checkout $(git  --no-pager branch -vv | fzf +m | awk '{print $1}')"
 	co = "!git checkout -- $(git status -s | fzf -m | awk '{print $2}')"
+	br = "!git branch --all --color \
+    | grep -v HEAD \
+    | sed 's#.* ##' \
+    | sed 's#remotes/##' \
+    | fzf +s -m +e --ansi --preview-window 'right:70%' \
+    --preview 'git log --color --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit {1} -- | head -200'"
+
 
 [color]
 	branch = auto
