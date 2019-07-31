@@ -4,7 +4,7 @@
 [core]
 	name = sungjk
 	email = ajax0615@gmail.com
-	excludesfile = /Users/Jeremy/dotfiles/.gitignore_global
+	excludesfile = $HOME/dotfiles/.gitignore_global
 	precomposeunicode = true
 	quotepath = false
 [alias]
@@ -15,7 +15,7 @@
 	hreset = reset --hard
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-	ch = "!git checkout $(git  --no-pager branch -vv | fzf +m | awk '{print $1}')"
+	ch = "!git checkout $(git branch --all -vv | fzf +m | awk '{print $1}')"
 	co = "!git checkout -- $(git status -s | fzf -m | awk '{print $2}')"
 	br = "!git branch --all --color \
     | grep -v HEAD \
@@ -23,7 +23,7 @@
     | sed 's#remotes/##' \
     | fzf +s -m +e --ansi --preview-window 'right:70%' \
     --preview 'git log --color --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit {1} -- | head -200'"
-
+	brd = "!git branch -d $(git branch | fzf +m | awk '{print $1}')"
 
 [color]
 	branch = auto
