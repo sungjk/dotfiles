@@ -87,5 +87,6 @@ brew install noti
 brew install awscli
 brew install jq
 brew install asciinema
+brew install parera10/csshx/csshx
 
 brew cleanup
