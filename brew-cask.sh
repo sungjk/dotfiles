@@ -6,7 +6,6 @@ brew tap caskroom/versions
 brew tap homebrew/core
 brew tap homebrew/services
 brew tap pivotal/tap
-brew tap parera10/csshx
 
 brew cask install font-source-code-pro
 

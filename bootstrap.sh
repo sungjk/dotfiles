@@ -76,3 +76,4 @@ touch $HOME/.aws/config
 # Etc
 #-------------------------------------------------------------------------------
 gem install jekyll bundler
+gem install i2cssh
