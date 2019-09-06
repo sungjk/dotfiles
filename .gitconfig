@@ -15,15 +15,15 @@
 	hreset = reset --hard
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-	ch = "!git checkout $(git branch --all -vv | fzf +m | awk '{print $1}')"
-	co = "!git checkout -- $(git status -s | fzf -m | awk '{print $2}')"
+	ch = "!git checkout $(git branch --all -vv | fzf --no-multi --no-mouse -e --ansi | awk '{print $1}')"
+	co = "!git checkout -- $(git status -s | fzf -m --no-mouse | awk '{print $2}')"
 	br = "!git branch --all --color \
     | grep -v HEAD \
     | sed 's#.* ##' \
     | sed 's#remotes/##' \
-    | fzf +s -m +e --ansi --preview-window 'right:70%' \
+    | fzf +s -m --no-mouse +e --ansi --preview-window 'right:70%' \
     --preview 'git log --color --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit {1} -- | head -200'"
-	brd = "!git branch -d $(git branch | fzf +m | awk '{print $1}')"
+	brd = "!git branch -d $(git branch | fzf --no-multi --no-mouse | awk '{print $1}')"
 
 [color]
 	branch = auto
