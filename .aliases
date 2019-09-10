@@ -85,3 +85,5 @@ alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.
 function mcd() {
 	mkdir $1 && cd $1
 }
+
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
