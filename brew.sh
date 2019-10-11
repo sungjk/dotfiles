@@ -42,6 +42,7 @@ brew install woff2
 # Dev
 brew install git
 brew install git-flow
+brew install git-lfs
 brew install openssl
 brew install mackup
 brew install tree
