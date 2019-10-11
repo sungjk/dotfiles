@@ -25,3 +25,5 @@ brew cask install tunnelblick
 brew search visual-studio-code
 brew cask info visual-studio-code
 brew cask install visual-studio-code
+
+brew cask install anaconda
