@@ -77,6 +77,9 @@ alias dclf='docker-compose logs -f'
 
 # Kubenertes
 alias kb="kubectl"
+alias mnk="minikube"
+alias mnkcreate="minikube start --vm-driver=xhyve && minikube addons enable ingress"
+alias mnkdel="minikube delete"
 
 # URL encoding and decoding
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
