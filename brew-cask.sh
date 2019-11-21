@@ -12,6 +12,7 @@ brew cask install font-source-code-pro
 brew cask install java8
 
 brew cask install atom
+brew cask install alfred
 brew cask install docker
 brew cask install dropbox
 brew cask install google-chrome
