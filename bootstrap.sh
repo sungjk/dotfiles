@@ -77,3 +77,4 @@ touch $HOME/.aws/config
 #-------------------------------------------------------------------------------
 gem install jekyll bundler
 gem install i2cssh
+gem install cocoapods
