@@ -57,6 +57,7 @@ brew install jhipster
 brew install kotlin
 brew install sbt
 brew install scala
+brew install lampepfl/brew/dotty
 brew install python3
 brew install pyenv
 brew install pyenv-virtualenv
@@ -67,7 +68,6 @@ brew install logstash
 brew install kibana
 brew install kubectl
 brew install kubernetes-cli
-brew install apache-spark
 
 brew install nvm
 brew install node
