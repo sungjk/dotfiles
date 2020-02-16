@@ -61,6 +61,9 @@ source $ZSH/oh-my-zsh.sh
 # autocompletion for awscli
 source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
 
+# solve the problem about slow copy&paste 
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
