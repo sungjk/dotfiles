@@ -89,4 +89,6 @@ brew install awscli
 brew install jq
 brew install asciinema
 
+brew install youtube-dl
+
 brew cleanup
