@@ -29,7 +29,6 @@ alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 # Reload zsh
 alias rr="source $HOME/.zshrc"
 
-
 # List all files colorized in long format
 alias l="ls -lF ${colorflag}"
 
@@ -85,6 +84,9 @@ alias mnkdel="minikube delete"
 # URL encoding and decoding
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
+
+# git
+alias gpall='find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \;'
 
 function mcd() {
 	mkdir $1 && cd $1
