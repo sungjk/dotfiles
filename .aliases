@@ -14,6 +14,7 @@ alias note="open -a \"atom\" ~/workspace/note.md"
 alias notej="open -a \"atom\" ~/workspace/note.json"
 alias todo="open -a \"atom\" ~/workspace/github/sungjk/wiki/todos.md"
 alias jpnb="jupyter notebook"
+alias pj="pp_json"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
