@@ -8,9 +8,34 @@
 	precomposeunicode = true
 	quotepath = false
 [alias]
+	alias = "!# Prints all aliases.;\n\
+		git config --list \
+		| egrep '^alias.+' \
+		| sed -e 's/^alias\\.//' \
+		| sed -e 's/^[^=]*=/\\'$'\\033[31m&\\033[(B\\033[m/' \
+		| column -t -s'=' \
+		| sed 's/!#* *//; s/;$//' \
+		| cut -c1-85"
 	c = commit -m
 	s = status -s
-	a = "!git add $(git status -s | fzf -m | awk '{print $2}')"
+	a = "!git diff-select | xargs git add"
+	diff-select = "! # add files with fzf preview diffs; \n\
+	    f() { \
+	        _height=$(stty size | awk '{print $1}');\
+	        git diff-info \
+	        | fzf -m --header \"$(git diff --shortstat)\" --preview \
+	            \"if [[ {1} == '??' ]]; then cat {3}; else git diff {3}; fi \
+	            | head -n $_height \
+	            | pygmentize\" \
+	        | awk '{print $3}'; \
+	    }; f"
+	diff-info = "! # get diff info;\n\
+	    fileA=/tmp/git-s-$(uuidgen); \
+	    fileB=/tmp/git-diff-$(uuidgen); \
+	    git s | awk '{print $2,$1}' > $fileA; \
+	    git diff --numstat | awk '{print $3,$1,$2}' > $fileB; \
+	    join -t' ' -a 1 $fileA $fileB | awk '{print $2, \"(+\"$3 \",-\"$4\")\", $1}' | sed 's/(+,-)/./' | column -t -s' ' ; \
+	    rm -f $fileA $fileB;"
 	undocommit = reset HEAD~
 	hreset = reset --hard
 	df = diff --color --color-words --abbrev
@@ -24,6 +49,8 @@
     | fzf +s -m --no-mouse +e --ansi --preview-window 'right:70%' \
     --preview 'git log --color --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit {1} -- | head -200'"
 	brd = "!git branch -d $(git branch | fzf --no-multi --no-mouse | awk '{print $1}')"
+	b0 = "!git branch | awk '/^\\*/{print $2}'"
+	sync = "!f() { git fetch $1 && git reset --hard $1/$(git b0); }; f"
 
 [color]
 	branch = auto

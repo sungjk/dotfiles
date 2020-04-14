@@ -78,3 +78,6 @@ touch $HOME/.aws/config
 gem install jekyll bundler
 gem install i2cssh
 gem install cocoapods
+
+# To show file changes in git
+pip3 install Pygments
