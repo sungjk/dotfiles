@@ -79,5 +79,9 @@ gem install jekyll bundler
 gem install i2cssh
 gem install cocoapods
 
+# https://github.com/bchatard/alfred-jetbrains
+# Toolbox > Generate shell scripts > /usr/local/bin
+npm install -g @bchatard/alfred-jetbrains
+
 # To show file changes in git
 pip3 install Pygments
