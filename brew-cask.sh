@@ -20,7 +20,7 @@ brew cask install postman
 brew cask install slack
 brew cask install sourcetree
 brew cask install wireshark
-brew cask install tunnelblick
+brew cask install notion
 
 brew search visual-studio-code
 brew cask info visual-studio-code
