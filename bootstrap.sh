@@ -80,8 +80,12 @@ gem install i2cssh
 gem install cocoapods
 
 # https://github.com/bchatard/alfred-jetbrains
-# Toolbox > Generate shell scripts > /usr/local/bin
+# Setting: Toolbox > Generate shell scripts > /usr/local/bin
 npm install -g @bchatard/alfred-jetbrains
+
+# https://github.com/kbshl/alfred-vscode
+# Prerequisite: https://github.com/alefragnani/vscode-project-manager
+npm install --global alfred-vscode
 
 # To show file changes in git
 pip3 install Pygments
