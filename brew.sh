@@ -68,6 +68,7 @@ brew install logstash
 brew install kibana
 brew install kubectl
 brew install kubernetes-cli
+brew install sonarqube
 
 brew install nvm
 brew install node
