@@ -77,6 +77,7 @@ brew install yarn
 brew install mongodb
 brew install mysql
 brew install sqlite
+brew install redis
 
 brew install zsh
 brew install zsh-autosuggestions
