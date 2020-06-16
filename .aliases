@@ -83,8 +83,8 @@ alias mnkcreate="minikube start --vm-driver=xhyve && minikube addons enable ingr
 alias mnkdel="minikube delete"
 
 # URL encoding and decoding
-alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
-alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
+alias urlencode='python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
+alias urldecode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'
 
 # git
 alias g="git"
