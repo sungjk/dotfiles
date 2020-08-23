@@ -71,6 +71,13 @@ touch $HOME/.aws/credentials
 touch $HOME/.aws/config
 
 
+#-------------------------------------------------------------------------------
+# flutter
+#-------------------------------------------------------------------------------
+mkdir -p $HOME/flutter
+git clone -b stable https://github.com/flutter/flutter.git $HOME/flutter
+# flutter upgrade && flutter doctor
+
 
 #-------------------------------------------------------------------------------
 # Etc
