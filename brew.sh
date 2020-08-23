@@ -68,6 +68,7 @@ brew install logstash
 brew install kibana
 brew install kubectl
 brew install kubernetes-cli
+brew install sonarqube
 
 brew install nvm
 brew install node
@@ -76,6 +77,7 @@ brew install yarn
 brew install mongodb
 brew install mysql
 brew install sqlite
+brew install redis
 
 brew install zsh
 brew install zsh-autosuggestions
