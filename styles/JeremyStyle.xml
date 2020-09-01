@@ -104,7 +104,6 @@
   </codeStyleSettings>
   <codeStyleSettings language="kotlin">
     <option name="KEEP_LINE_BREAKS" value="false" />
-    <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
     <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
     <option name="CALL_PARAMETERS_LPAREN_ON_NEXT_LINE" value="true" />
     <option name="CALL_PARAMETERS_RPAREN_ON_NEXT_LINE" value="true" />
