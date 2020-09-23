@@ -28,3 +28,4 @@ brew cask info visual-studio-code
 brew cask install visual-studio-code
 
 brew cask install anaconda
+brew cask install insomnia
