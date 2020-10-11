@@ -69,6 +69,7 @@ brew install kibana
 brew install kubectl
 brew install kubernetes-cli
 brew install sonarqube
+brew install gh
 
 brew install nvm
 brew install node
