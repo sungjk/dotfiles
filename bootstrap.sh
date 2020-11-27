@@ -30,6 +30,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH/custom/plugi
 git clone https://github.com/jhipster/jhipster-oh-my-zsh-plugin.git $ZSH/custom/plugins/jhipster
 git clone https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git $ZSH/custom/plugins/autoswitch_virtualenv
 
+brew install wget
 wget https://raw.githubusercontent.com/jeremyFreeAgent/oh-my-zsh-powerline-theme/master/powerline.zsh-theme -O $ZSH/themes/powerline.zsh-theme
 git clone git@github.com:powerline/fonts.git && bash fonts/install.sh
 sleep 3
