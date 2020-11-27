@@ -8,8 +8,14 @@ brew tap pivotal/tap
 
 brew cask install font-source-code-pro
 
-brew cask install java8
-brew cask install java11
+brew tap adoptopenjdk/openjdk
+brew search jdk
+brew cask install adoptopenjdk8
+brew cask install adoptopenjdk11
+brew untap adoptopenjdk/openjdk
+#
+brew cask install adoptopenjdk/openjdk/adoptopenjdk8
+brew cask install adoptopenjdk/openjdk/adoptopenjdk11
 
 brew cask install atom
 brew cask install alfred
