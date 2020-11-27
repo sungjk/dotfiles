@@ -61,11 +61,8 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting git npm docker docker-compose autoswitch_virtualenv git-flow jsontools)
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
-
-# autocompletion for awscli
-source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
 
 # solve the problem about slow copy&paste
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'
