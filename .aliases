@@ -12,6 +12,7 @@ alias openvs="open -a \"Visual Studio Code\""
 alias note="open -a \"atom\" ~/workspace/note.md"
 alias notej="open -a \"atom\" ~/workspace/note.json"
 alias todo="open -a \"atom\" ~/workspace/github/sungjk/wiki/todos.md"
+alias sungjk="open -a \"atom\" ~/workspace/github/sungjk.github.io"
 alias jpnb="jupyter notebook"
 alias pj="pp_json"
 
