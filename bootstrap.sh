@@ -5,6 +5,7 @@ git pull origin master;
 echo "Setting up your Mac..."
 
 mkdir -p $HOME/workspace
+mkdir -p $HOME/go/{bin,src,pkg}
 
 DOTFILES=$HOME/dotfiles
 

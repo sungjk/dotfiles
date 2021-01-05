@@ -23,10 +23,8 @@ brew cask install docker
 brew cask install dropbox
 brew cask install google-chrome
 brew cask install iterm2
-brew cask install postman
 brew cask install slack
 brew cask install sourcetree
-brew cask install wireshark
 brew cask install notion
 
 brew search visual-studio-code

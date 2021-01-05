@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # For brew cask available options
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
@@ -17,3 +19,8 @@ source $(brew --prefix nvm)/nvm.sh
 
 # https://medium.com/ayuth/install-anaconda-on-macos-with-homebrew-c94437d63a37
 export PATH="/usr/local/anaconda3/bin:$PATH"
+
+# Setup Environment for Go
+export GOPATH=$HOME/go
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"

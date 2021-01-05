@@ -71,6 +71,7 @@ brew install kubernetes-cli
 brew install sonarqube
 brew install gh
 brew install kafkacat
+brew install go
 
 brew install nvm
 brew install node
