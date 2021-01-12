@@ -70,6 +70,7 @@ brew install kubectl
 brew install kubernetes-cli
 brew install sonarqube
 brew install gh
+brew install kafka
 brew install kafkacat
 brew install go
 
