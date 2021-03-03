@@ -66,8 +66,6 @@ brew install rbenv
 brew install elasticsearch
 brew install logstash
 brew install kibana
-brew install kubectl
-brew install kubernetes-cli
 brew install sonarqube
 brew install gh
 brew install kafka
@@ -95,7 +93,11 @@ brew install awscli
 brew install jq
 brew install asciinema
 
-brew install ffmpeg
-brew install youtube-dl
+# kubernetes
+brew install minikube
+#brew unlink minikube
+#brew link minikube
+brew install kubectl
+brew install kubernetes-cli
 
 brew cleanup
