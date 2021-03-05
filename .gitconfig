@@ -16,6 +16,12 @@
 		| column -t -s'=' \
 		| sed 's/!#* *//; s/;$//' \
 		| cut -c1-85"
+	repo = "!git remote -v \
+		| awk '{print $1 \"\t\" $2}' \
+		| uniq \
+		| fzf --no-multi --no-mouse -e --ansi \
+		| awk '{print $2}' \
+		| xargs open"
 	c = commit -m
 	s = status -s
 	a = "!git diff-select | xargs git add"
