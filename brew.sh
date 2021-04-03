@@ -63,9 +63,6 @@ brew install pyenv
 brew install pyenv-virtualenv
 brew install ruby
 brew install rbenv
-brew install elasticsearch
-brew install logstash
-brew install kibana
 brew install sonarqube
 brew install gh
 brew install kafka
@@ -78,7 +75,6 @@ brew install yarn
 
 brew install mongodb
 brew install mysql
-brew install sqlite
 brew install redis
 
 brew install zsh
@@ -94,10 +90,6 @@ brew install jq
 brew install asciinema
 
 # kubernetes
-brew install minikube
-#brew unlink minikube
-#brew link minikube
 brew install kubectl
-brew install kubernetes-cli
 
 brew cleanup

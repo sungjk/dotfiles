@@ -1,5 +1,4 @@
 #!/bin/bash
-
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 brew tap homebrew/core
@@ -24,7 +23,6 @@ brew cask install dropbox
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install slack
-brew cask install sourcetree
 brew cask install notion
 
 brew search visual-studio-code
