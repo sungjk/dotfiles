@@ -5,29 +5,29 @@ brew tap homebrew/core
 brew tap homebrew/services
 brew tap pivotal/tap
 
-brew cask install font-source-code-pro
+brew install --cask font-source-code-pro
 
 brew tap adoptopenjdk/openjdk
 brew search jdk
-brew cask install adoptopenjdk8
-brew cask install adoptopenjdk11
+brew install --cask adoptopenjdk8
+brew install --cask adoptopenjdk11
 brew untap adoptopenjdk/openjdk
-#
-brew cask install adoptopenjdk/openjdk/adoptopenjdk8
-brew cask install adoptopenjdk/openjdk/adoptopenjdk11
 
-brew cask install atom
-brew cask install alfred
-brew cask install docker
-brew cask install dropbox
-brew cask install google-chrome
-brew cask install iterm2
-brew cask install slack
-brew cask install notion
+brew install --cask adoptopenjdk/openjdk/adoptopenjdk8
+brew install --cask adoptopenjdk/openjdk/adoptopenjdk11
+
+brew install --cask atom
+brew install --cask alfred
+brew install --cask docker
+brew install --cask dropbox
+brew install --cask google-chrome
+brew install --cask iterm2
+brew install --cask slack
+brew install --cask notion
 
 brew search visual-studio-code
-brew cask info visual-studio-code
-brew cask install visual-studio-code
+brew info --cask visual-studio-code
+brew install --cask visual-studio-code
 
-brew cask install anaconda
-brew cask install insomnia
+brew install --cask anaconda
+brew install --cask insomnia
