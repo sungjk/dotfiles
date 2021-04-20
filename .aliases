@@ -4,7 +4,7 @@
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias w="cd ~/workspace"
-alias wk="cd ~/workspace/kakaopay"
+alias wd="cd ~/workspace/daangn"
 alias cs="cd ~/.ssh"
 alias lsec2="aws ec2 describe-instances --query \"Reservations[].Instances[].[Tags[?Key=='Name']|[0].Value, KeyName, PublicIpAddress, PublicDnsName, InstanceId, InstanceType, State.Name]\" --output table"
 alias lsrds="aws rds describe-db-instances --query 'DBInstances[*].[DBInstanceIdentifier, Engine, DBInstanceStatus, Endpoint.Address, Endpoint.Port, DBName, MasterUsername] | sort_by(@, &[0])'"
