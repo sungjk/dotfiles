@@ -93,3 +93,7 @@
 
 [fetch]
 	prune = true
+[pull]
+	rebase = true
+[diff]
+	colorMoved = zebra
