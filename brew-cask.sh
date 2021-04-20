@@ -15,6 +15,7 @@ brew untap adoptopenjdk/openjdk
 
 brew install --cask adoptopenjdk/openjdk/adoptopenjdk8
 brew install --cask adoptopenjdk/openjdk/adoptopenjdk11
+brew install --cask adoptopenjdk/openjdk/adoptopenjdk15
 
 brew install --cask atom
 brew install --cask alfred
