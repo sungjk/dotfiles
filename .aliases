@@ -11,6 +11,7 @@ alias lsrds="aws rds describe-db-instances --query 'DBInstances[*].[DBInstanceId
 alias openvs="open -a \"Visual Studio Code\""
 alias note="open -a \"atom\" ~/workspace/note.md"
 alias notej="open -a \"atom\" ~/workspace/note.json"
+alias notesql="open -a \"atom\" ~/workspace/note.sql"
 alias todo="open -a \"atom\" ~/workspace/github/sungjk/wiki/todos.md"
 alias sungjk="open -a \"atom\" ~/workspace/github/sungjk.github.io"
 alias jpnb="jupyter notebook"
