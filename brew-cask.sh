@@ -32,3 +32,4 @@ brew install --cask visual-studio-code
 
 brew install --cask anaconda
 brew install --cask insomnia
+brew install --cask mysqlworkbench
