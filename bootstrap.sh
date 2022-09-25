@@ -74,22 +74,6 @@ touch $HOME/.aws/config
 
 
 #-------------------------------------------------------------------------------
-# flutter
-#-------------------------------------------------------------------------------
-mkdir -p $HOME/flutter
-git clone -b stable https://github.com/flutter/flutter.git $HOME/flutter
-# flutter upgrade && flutter doctor
-
-
-#-------------------------------------------------------------------------------
-# Rust
-#-------------------------------------------------------------------------------
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-# rustc --version
-# cargo --version
-
-
-#-------------------------------------------------------------------------------
 # Etc
 #-------------------------------------------------------------------------------
 gem install jekyll bundler
@@ -99,6 +83,7 @@ gem install cocoapods
 # https://github.com/bchatard/alfred-jetbrains
 # Setting: Toolbox > Generate shell scripts > /usr/local/bin
 npm install -g @bchatard/alfred-jetbrains
+# https://github.com/artemy/alfred-jetbrains-projects
 
 # https://github.com/kbshl/alfred-vscode
 # Prerequisite: https://github.com/alefragnani/vscode-project-manager

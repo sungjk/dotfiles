@@ -17,9 +17,6 @@ export AUTOSWITCH_DEFAULT_PYTHON="/usr/local/bin/python3.7"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-# https://medium.com/ayuth/install-anaconda-on-macos-with-homebrew-c94437d63a37
-export PATH="/usr/local/anaconda3/bin:$PATH"
-
 # Setup Environment for Go
 export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"

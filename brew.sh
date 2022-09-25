@@ -33,8 +33,6 @@ fi;
 # Install more recent versions of some macOS tools.
 brew install grep
 brew install openssh
-brew install screen
-brew install php
 
 # Install font tools.
 brew install woff2
@@ -42,7 +40,6 @@ brew install woff2
 # Dev
 brew install git
 brew install git-flow
-brew install git-lfs
 brew install openssl
 brew install mackup
 brew install tree
@@ -57,10 +54,7 @@ brew install jhipster
 brew install kotlin
 brew install sbt
 brew install scala
-brew install lampepfl/brew/dotty
 brew install python3
-brew install pyenv
-brew install pyenv-virtualenv
 brew install ruby
 brew install rbenv
 brew install sonarqube
@@ -73,7 +67,6 @@ brew install nvm
 brew install node
 brew install yarn
 
-brew install mongodb
 brew install mysql
 brew install redis
 

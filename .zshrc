@@ -6,12 +6,6 @@ export DOTFILES=$HOME/dotfiles
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Update the environment path for flutter.
-export PATH="$HOME/flutter/bin:$PATH"
-
-# Configuring the PATH environment variable for Rust.
-export PATH="$HOME/.cargo/bin:$PATH"
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -56,6 +50,13 @@ HIST_STAMPS="yyyy-mm-dd"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+HISTFILE=~/.zsh_history     # Where to save history to disk
+HISTSIZE=5000               # How many lines of history to keep in memory
+SAVEHIST=5000               # Number of history entries to save to disk
+setopt    appendhistory     # Append history to the history file (no overwriting)
+setopt    sharehistory      # Share history across terminals
+setopt    incappendhistory  # Immediately append to the history file, not just when a term is killed
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -79,3 +80,4 @@ done;
 unset files file;
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
