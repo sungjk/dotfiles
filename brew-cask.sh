@@ -11,6 +11,7 @@ brew tap adoptopenjdk/openjdk
 brew install --cask adoptopenjdk8
 brew untap adoptopenjdk/openjdk
 brew install --cask temurin17
+brew install --cask temurin19
 
 brew install --cask atom
 brew install --cask alfred
