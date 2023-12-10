@@ -14,7 +14,7 @@ brew install --cask temurin17
 brew install --cask temurin19
 
 brew install --cask atom
-brew install --cask alfred
+brew install --cask raycast
 brew install --cask docker
 brew install --cask dropbox
 brew install --cask google-chrome
