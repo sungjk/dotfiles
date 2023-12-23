@@ -10,8 +10,8 @@ brew install --cask font-source-code-pro
 brew tap adoptopenjdk/openjdk
 brew install --cask adoptopenjdk8
 brew untap adoptopenjdk/openjdk
-brew install --cask temurin17
 brew install --cask temurin19
+brew install --cask temurin21
 
 brew install --cask atom
 brew install --cask raycast
