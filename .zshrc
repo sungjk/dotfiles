@@ -61,7 +61,7 @@ setopt    incappendhistory  # Immediately append to the history file, not just w
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting git npm docker docker-compose autoswitch_virtualenv git-flow jsontools)
+plugins=(zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting git npm jsontools)
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
