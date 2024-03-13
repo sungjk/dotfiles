@@ -54,9 +54,10 @@
     | sed 's#remotes/##' \
     | fzf +s -m --no-mouse +e --ansi --preview-window 'right:70%' \
     --preview 'git log --color --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit {1} -- | head -200'"
-	brd = "!git branch -d $(git branch | fzf -m --no-mouse | awk '{print $1}')"
+	brd = "!git branch -D $(git branch | fzf -m --no-mouse | awk '{print $1}')"
 	b0 = "!git branch | awk '/^\\*/{print $2}'"
 	sync = "!f() { git fetch $1 && git reset --hard $1/$(git b0); }; f"
+	gone = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
 
 [color]
 	branch = auto
