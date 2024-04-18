@@ -4,7 +4,7 @@
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Export JAVA_HOME
-export JAVA_HOME=`/usr/libexec/java_home -v 17`
+export JAVA_HOME=`/usr/libexec/java_home -v 21`
 
 # Setting a nvm directory
 # brew update
