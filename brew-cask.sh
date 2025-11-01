@@ -23,3 +23,4 @@ brew install --cask slack
 brew install --cask notion
 brew install --cask mysqlworkbench
 brew install --cask visual-studio-code
+brew install --cask claude-code

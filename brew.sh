@@ -62,6 +62,7 @@ brew install gh
 brew install kafka
 brew install kafkacat
 brew install go
+brew install mise
 
 brew install nvm
 brew install node
