@@ -81,3 +81,33 @@ unset files file;
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export PATH="$PATH:$HOME/.local/bin"
+
+function cursor {
+  open -a "/Applications/Cursor.app" "$@"
+}
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+function cc() {
+  local env_vars=(
+    "ENABLE_BACKGROUND_TASKS=true"
+    "FORCE_AUTO_BACKGROUND_TASKS=true"
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=true"
+    "CLAUDE_CODE_ENABLE_UNIFIED_READ_TOOL=true"
+  )
+  
+  local claude_args=()
+  
+  if [[ "$1" = "-y" ]]; then
+    claude_args+=("--dangerously-skip-permissions")
+  elif [[ "$1" = "-r" ]]; then
+    claude_args+=("--resume")
+  elif [[ "$1" = "-ry" || "$1" = "-yr" ]]; then
+    claude_args+=("--resume" "--dangerously-skip-permissions")
+  fi
+  
+  env "${env_vars[@]}" claude "${claude_args[@]}"
+}
+
+eval "$(~/.local/bin/mise activate zsh)"
