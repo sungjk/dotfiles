@@ -1,5 +1,6 @@
 # git credential file
 .gitconfig.local
+.env
 
 # dependency
 node_modules

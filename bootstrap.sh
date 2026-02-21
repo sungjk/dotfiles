@@ -1,67 +1,75 @@
 #!/usr/bin/env bash
 
-git pull origin master;
-
 echo "Setting up your Mac..."
+
+DOTFILES=$HOME/dotfiles
 
 mkdir -p $HOME/workspace
 mkdir -p $HOME/go/{bin,src,pkg}
 
-DOTFILES=$HOME/dotfiles
 
-# Check for Homebrew and install if we don't have it
+#-------------------------------------------------------------------------------
+# Homebrew
+#-------------------------------------------------------------------------------
 if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Make ZSH the default shell environment
+# Ensure brew is in PATH (Apple Silicon)
+eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null || /usr/local/bin/brew shellenv 2>/dev/null)"
+
+source $DOTFILES/brew.sh
+source $DOTFILES/brew-cask.sh
+
+
+#-------------------------------------------------------------------------------
+# Zsh + Oh My Zsh
+#-------------------------------------------------------------------------------
 chsh -s $(which zsh)
 
-
-#-------------------------------------------------------------------------------
-# Install zsh
-#-------------------------------------------------------------------------------
 ZSH=$HOME/.oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions $ZSH/custom/plugins/zsh-completions
 git clone https://github.com/zsh-users/zsh-history-substring-search $ZSH/custom/plugins/zsh-history-substring-search
 git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH/custom/plugins/zsh-syntax-highlighting
-git clone https://github.com/jhipster/jhipster-oh-my-zsh-plugin.git $ZSH/custom/plugins/jhipster
 
-brew install wget
-wget https://raw.githubusercontent.com/jeremyFreeAgent/oh-my-zsh-powerline-theme/master/powerline.zsh-theme -O $ZSH/themes/powerline.zsh-theme
-git clone https://github.com/powerline/fonts.git && bash fonts/install.sh
-sleep 3
-rm -rf fonts
+# Powerlevel10k
+brew install powerlevel10k
+ln -sf $(brew --prefix)/share/powerlevel10k $ZSH/custom/themes/powerlevel10k
 
-cp -r $DOTFILES/.fonts/ /Library/Fonts
 
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
+#-------------------------------------------------------------------------------
+# Symlinks
+#-------------------------------------------------------------------------------
+# Zsh
 rm -rf $HOME/.zshrc
 ln -nfs $DOTFILES/.zshrc $HOME/.zshrc
+ln -nfs $DOTFILES/.p10k.zsh $HOME/.p10k.zsh
 
-
-#-------------------------------------------------------------------------------
-# Install global Git configuration
-#-------------------------------------------------------------------------------
+# Git
 ln -nfs $DOTFILES/.gitconfig $HOME/.gitconfig
 git config --global core.excludesfile $DOTFILES/.gitignore_global
 git config --global user.name "sungjk"
 git config --global user.email "ajax0615@gmail.com"
 
+# Ghostty
+mkdir -p $HOME/.config/ghostty
+ln -nfs $DOTFILES/.ghostty-config $HOME/.config/ghostty/config
+
+# Misc
+ln -nfs $DOTFILES/.editorconfig $HOME/.editorconfig
+ln -nfs $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
+
+# fzf keybindings
+$(brew --prefix)/opt/fzf/install --all --no-bash --no-fish
+
 
 #-------------------------------------------------------------------------------
-# Source profile
+# macOS defaults
 #-------------------------------------------------------------------------------
-source $HOME/.zshrc
 source $DOTFILES/.macos
-# Symlink the Mackup config file to the home directory
-rm -rf $HOME/.mackup.cfg
-ln -nfs $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
-# To install useful key bindings and fuzzy completion:
-$(brew --prefix)/opt/fzf/install
 
 
 #-------------------------------------------------------------------------------
@@ -71,7 +79,14 @@ mkdir -p $HOME/.aws
 touch $HOME/.aws/credentials
 touch $HOME/.aws/config
 mkdir -p $HOME/.gradle
-gem install jekyll bundler
+gem install --user-install jekyll bundler
+pip3 install --user Pygments
 
-# To show file changes in git
-pip3 install Pygments
+# Remind to create .env
+if [ ! -f $DOTFILES/.env ]; then
+  echo ""
+  echo "WARNING: Create $DOTFILES/.env with your tokens"
+fi
+
+echo ""
+echo "Done. Restart your terminal or run: exec zsh"

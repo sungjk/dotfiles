@@ -9,12 +9,6 @@ alias cs="cd ~/.ssh"
 alias lsec2="aws ec2 describe-instances --query \"Reservations[].Instances[].[Tags[?Key=='Name']|[0].Value, KeyName, PublicIpAddress, PublicDnsName, InstanceId, InstanceType, State.Name]\" --output table"
 alias lsrds="aws rds describe-db-instances --query 'DBInstances[*].[DBInstanceIdentifier, Engine, DBInstanceStatus, Endpoint.Address, Endpoint.Port, DBName, MasterUsername] | sort_by(@, &[0])'"
 alias openvs="open -a \"Visual Studio Code\""
-alias note="open -a \"atom\" ~/workspace/note.md"
-alias notej="open -a \"atom\" ~/workspace/note.json"
-alias notesql="open -a \"atom\" ~/workspace/note.sql"
-alias todo="open -a \"atom\" ~/workspace/github/sungjk/wiki/todos.md"
-alias sungjk="open -a \"atom\" ~/workspace/github/sungjk.github.io"
-alias jpnb="jupyter notebook"
 alias pj="pp_json"
 
 # Detect which `ls` flavor is in use
@@ -53,11 +47,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# Java Version Switcher
-alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`; java -version"
-alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
-# alias jsh="j11 && sleep 1 && cd $HOME/libs && mvn jshell:run"
-
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
@@ -68,21 +57,18 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 
 # Docker
 alias dps="docker ps"
-alias dc="docker-compose"
-alias dcb='docker-compose build'
-alias dce='docker-compose exec'
-alias dcps='docker-compose ps'
-alias dcr='docker-compose run'
-alias dcup='docker-compose up'
-alias dcdn='docker-compose down'
-alias dcl='docker-compose logs'
-alias dclf='docker-compose logs -f'
+alias dc="docker compose"
+alias dcb='docker compose build'
+alias dce='docker compose exec'
+alias dcps='docker compose ps'
+alias dcr='docker compose run'
+alias dcup='docker compose up'
+alias dcdn='docker compose down'
+alias dcl='docker compose logs'
+alias dclf='docker compose logs -f'
 
-# Kubenertes
+# Kubernetes
 alias kb="kubectl"
-alias mnk="minikube"
-alias mnkcreate="minikube start --vm-driver=xhyve && minikube addons enable ingress"
-alias mnkdel="minikube delete"
 
 # URL encoding and decoding
 alias urlencode='python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
@@ -90,8 +76,6 @@ alias urldecode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_pl
 
 # git
 alias g="git"
-alias gpall='find . -type d -depth 1 -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \;'
-
 function mcd() {
 	mkdir $1 && cd $1
 }

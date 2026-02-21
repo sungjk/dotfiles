@@ -1,9 +1,6 @@
 # Local bin directories before anything else
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
-# Load Node global installed binaries
-PATH="/usr/local/opt/node@10/bin:$PATH"
-
 # Use project specific binaries before global ones
 PATH="node_modules/.bin:vendor/bin:$PATH"
 

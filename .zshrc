@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -10,7 +17,7 @@ export ZSH=$HOME/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -29,7 +36,7 @@ export UPDATE_ZSH_DAYS=7
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -62,7 +69,6 @@ setopt    incappendhistory  # Immediately append to the history file, not just w
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting git npm jsontools)
-source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
 # solve the problem about slow copy&paste
@@ -110,4 +116,31 @@ function cc() {
   env "${env_vars[@]}" claude "${claude_args[@]}"
 }
 
-eval "$(~/.local/bin/mise activate zsh)"
+function ccc() {
+  local env_vars=(
+    "ENABLE_BACKGROUND_TASKS=true"
+    "FORCE_AUTO_BACKGROUND_TASKS=true"
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=true"
+    "CLAUDE_CODE_ENABLE_UNIFIED_READ_TOOL=true"
+  )
+  
+  local claude_args=()
+  
+  if [[ "$1" = "-y" ]]; then
+    claude_args+=("--dangerously-skip-permissions")
+  elif [[ "$1" = "-r" ]]; then
+    claude_args+=("--resume")
+  elif [[ "$1" = "-ry" || "$1" = "-yr" ]]; then
+    claude_args+=("--resume" "--dangerously-skip-permissions")
+  fi
+  
+  env "${env_vars[@]}" claude --chrome "${claude_args[@]}"
+}
+
+eval "$(mise activate zsh)"
+
+precmd() { print -Pn "\e]0;%~\a" }
+preexec() { print -Pn "\e]0;%~ — $1\a" }
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -1,0 +1,39 @@
+# Font
+font-family = "SauceCodePro Nerd Font Mono"
+font-size = 14
+adjust-cell-width = -5%
+
+# Theme
+theme = "GitHub Dark"
+background-opacity = 0.9
+background-blur = true
+background-blur-radius = 1
+
+# Cursor
+cursor-style = block
+cursor-style-blink = true
+shell-integration-features = no-cursor
+
+# Window
+window-padding-x = 10
+window-padding-y = 8
+window-padding-balance = true
+unfocused-split-opacity = 0.1
+copy-on-select = clipboard
+macos-option-as-alt = true
+
+# Quick Terminal
+quick-terminal-position = top
+quick-terminal-size = 40%
+quick-terminal-animation-duration = 0.2
+quick-terminal-autohide = true
+
+# Keybindings
+keybind = opt+backspace=text:\x17
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+keybind = cmd+shift+r=new_split:right
+keybind = cmd+shift+d=new_split:down
+keybind = cmd+up=goto_split:up
+keybind = cmd+down=goto_split:down
+keybind = cmd+left=goto_split:left
+keybind = cmd+right=goto_split:right

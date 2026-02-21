@@ -4,16 +4,15 @@
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Export JAVA_HOME
-export JAVA_HOME=`/usr/libexec/java_home -v 21`
-
-# Setting a nvm directory
-# brew update
-# brew install nvm
-# mkdir ~/.nvm
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+export JAVA_HOME=`/usr/libexec/java_home -v 25`
 
 # Setup Environment for Go
 export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
+export PATH=$HOME/.gem/bin:$PATH
+
+export NODE_OPTIONS="--max-old-space-size=8192"
+
+[ -f $HOME/dotfiles/.env ] && source $HOME/dotfiles/.env
