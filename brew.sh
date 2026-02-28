@@ -51,6 +51,7 @@ brew install kafka
 brew install kcat
 brew install go
 brew install mise
+brew install tmux
 
 brew install node
 brew install yarn
