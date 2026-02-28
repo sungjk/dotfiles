@@ -55,6 +55,11 @@ brew install mise
 brew install node
 brew install yarn
 
+npm install -g pnpm
+npm install -g @anthropic-ai/claude-code
+npm install -g @openai/codex
+npm install -g @mariozechner/pi-coding-agent
+
 brew install mysql
 brew install redis
 
@@ -64,6 +69,7 @@ brew install zsh-completions
 brew install zsh-history-substring-search
 brew install zsh-syntax-highlighting
 brew install fzf
+brew install pygments
 brew install noti
 
 brew install awscli

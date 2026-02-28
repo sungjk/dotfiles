@@ -29,8 +29,8 @@
 	    f() { \
 	        _height=$(stty size | awk '{print $1}');\
 	        git diff-info \
-	        | fzf -m --header \"$(git diff --shortstat)\" --preview \
-	            \"if [[ {1} == '??' ]]; then cat {3}; else git diff {3}; fi \
+	        | fzf -m --bind 'space:toggle' --header \"$(git diff --shortstat)\" --preview \
+	            \"if [[ {1} == '??' ]]; then cat {3}; else git diff HEAD -- {3}; fi \
 	            | head -n $_height \
 	            | pygmentize\" \
 	        | awk '{print $3}'; \
@@ -39,7 +39,7 @@
 	    fileA=/tmp/git-s-$(uuidgen); \
 	    fileB=/tmp/git-diff-$(uuidgen); \
 	    git s | awk '{print $2,$1}' > $fileA; \
-	    git diff --numstat | awk '{print $3,$1,$2}' > $fileB; \
+	    git diff --numstat HEAD | awk '{print $3,$1,$2}' > $fileB; \
 	    join -t' ' -a 1 $fileA $fileB | awk '{print $2, \"(+\"$3 \",-\"$4\")\", $1}' | sed 's/(+,-)/./' | column -t -s' ' ; \
 	    rm -f $fileA $fileB;"
 	undocommit = reset HEAD~
